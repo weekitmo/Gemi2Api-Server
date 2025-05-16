@@ -38,7 +38,7 @@ API_KEY= "API_KEY VALUE HERE"
 > source venv/bin/activate
 
 3. 启动
-> uvicorn main:app --reload --host 127.0.0.1 --port 8000
+> uvicorn main:app --reload --host 127.0.0.1 --port 7775
 
 > [!WARNING] 
 > tips: 如果不填写 API_KEY ，那么就直接使用
@@ -103,3 +103,9 @@ docker-compose up -d --build
 5. 复制 `__Secure-1PSID` 和 `__Secure-1PSIDTS` 的值
 6. 更新 `.env` 文件
 7. 重新构建并启动: `docker-compose up -d --build`
+
+# 获取模型列表
+
+```bash
+curl http://127.0.0.1:7775/v1/models | jq
+```
